@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
     private final ClientApi clientApi;
 
-    public TestController(ClientApi clientApi) {
-        this.clientApi = clientApi;
-    }
-
     @GetMapping("/client/{id}")
     public Client testClient(@PathVariable Long id) {
         return clientApi.findClientById(id);
+    }
+
+    public TestController(ClientApi clientApi) {
+        this.clientApi = clientApi;
     }
 }
